@@ -136,8 +136,8 @@ public class HexMesh : MonoBehaviour
         Vector3 v4 = HexMetrics.TerraceLerp(beginRight, endRight, 1);
         Color c2 = HexMetrics.TerraceLerp(beginCell.color, endCell.color, 1);
 
-        AddQuad(beginLeft, beginRight, endLeft, endRight);
-        AddQuadColour(beginCell.color, endCell.color);
+        AddQuad(beginLeft, beginRight, v3, v4);
+        AddQuadColour(beginCell.color, c2);
 
 
         for (int i = 2; i < HexMetrics.terraceSteps; i++)
