@@ -127,6 +127,75 @@ public class HexCell : MonoBehaviour
         }
     }
 
+    int urbanLevel, farmLevel, plantLevel;
+
+    public int UrbanLevel
+    {
+        get
+        {
+            return urbanLevel;
+        }
+        set
+        {
+            if (urbanLevel != value)
+            {
+                urbanLevel = value;
+                RefreshSelfOnly();
+            }
+        }
+    }
+
+    
+    public int FarmLevel
+    {
+        get
+        {
+            return farmLevel;
+        }
+        set
+        {
+            if (farmLevel != value)
+            {
+                farmLevel = value;
+                RefreshSelfOnly();
+            }
+        }
+    }
+
+    public int PlantLevel
+    {
+        get
+        {
+            return plantLevel;
+        }
+        set
+        {
+            if (plantLevel != value)
+            {
+                plantLevel = value;
+                RefreshSelfOnly();
+            }
+        }
+    }
+
+    public bool Walled
+    {
+        get
+        {
+            return walled;
+        }
+        set
+        {
+            if (walled != value)
+            {
+                walled = value;
+                Refresh();
+            }
+        }
+    }
+
+    bool walled;
+
     public bool HasRoads
     {
         get
@@ -141,6 +210,7 @@ public class HexCell : MonoBehaviour
             return false;
         }
     }
+
 
     public void AddRoad(HexDirection direction)
     {
@@ -356,6 +426,8 @@ public class HexCell : MonoBehaviour
             RemoveIncomingRiver();
         }
     }
+
+
 
     void Refresh()
     {
