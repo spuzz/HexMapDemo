@@ -621,6 +621,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114077944103862964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,6 +684,12 @@ MonoBehaviour:
   - prefabs:
     - {fileID: 4918893268932952, guid: f979daf91920f09418f18709e216a291, type: 2}
     - {fileID: 4918893268932952, guid: 9198765b432491b44851cbf7414ff984, type: 2}
+  wallTower: {fileID: 4283602861777392, guid: 77ccabf68d6bfc146b3695691ddf0833, type: 2}
+  bridge: {fileID: 4432628680874612, guid: 19008723892623b4b86ea9a0118f72f9, type: 2}
+  special:
+  - {fileID: 4771524148687392, guid: 0b5e7f345435b2443a61c81f9cc68bcf, type: 2}
+  - {fileID: 4150080307376754, guid: e4095a1a8dd42ad429086b40f671a9dc, type: 2}
+  - {fileID: 4883368293783028, guid: c9ec6eacdebc80540ae78bfdf6e0dbc2, type: 2}
   walls: {fileID: 114528035166026276}
 --- !u!114 &114261981461916714
 MonoBehaviour:
@@ -699,6 +706,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114410828647124824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -714,6 +722,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114434144390661168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -729,6 +738,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114528035166026276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -744,6 +754,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114638955121929304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,6 +770,7 @@ MonoBehaviour:
   useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 1
+  useTerrainTypes: 0
 --- !u!114 &114745873516639404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,6 +786,7 @@ MonoBehaviour:
   useColors: 1
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 1
 --- !u!114 &114846767683235184
 MonoBehaviour:
   m_ObjectHideFlags: 1

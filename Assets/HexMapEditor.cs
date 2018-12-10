@@ -1,22 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using System.IO;
 public class HexMapEditor : MonoBehaviour
 {
 
-    public Color[] colors;
 
     public HexGrid hexGrid;
 
-    bool applyColor;
     bool applyElevation = false;
     bool applyWaterLevel = false;
-    bool applyUrbanLevel, applyFarmLevel, applyPlantLevel;
+    bool applyUrbanLevel, applyFarmLevel, applyPlantLevel, applySpecialIndex;
 
-    private Color activeColor;
     int activeElevation;
     int activeWaterLevel;
-    int activeUrbanLevel, activeFarmLevel, activePlantLevel;
+    int activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
     int brushSize;
+    int activeTerrainTypeIndex;
 
     bool isDrag;
     HexDirection dragDirection;
@@ -28,11 +27,6 @@ public class HexMapEditor : MonoBehaviour
     }
 
     OptionalToggle riverMode, roadMode, walledMode;
-
-    void Awake()
-    {
-        SelectColor(0);
-    }
 
     void Update()
     {
@@ -92,9 +86,9 @@ public class HexMapEditor : MonoBehaviour
     {
         if (cell)
         {
-            if (applyColor)
+            if (activeTerrainTypeIndex >= 0)
             {
-                cell.Color = activeColor;
+                cell.TerrainTypeIndex = activeTerrainTypeIndex;
             }
             if (applyElevation)
             {
@@ -103,6 +97,10 @@ public class HexMapEditor : MonoBehaviour
             if (applyWaterLevel)
             {
                 cell.WaterLevel = activeWaterLevel;
+            }
+            if (applySpecialIndex)
+            {
+                cell.SpecialIndex = activeSpecialIndex;
             }
             if (applyUrbanLevel)
             {
@@ -146,14 +144,8 @@ public class HexMapEditor : MonoBehaviour
         }
     }
 
-    public void SelectColor(int index)
-    {
-        applyColor = index >= 0;
-        if (applyColor)
-        {
-            activeColor = colors[index];
-        }
-    }
+
+
     public void SetElevation(float elevation)
     {
         activeElevation = (int)elevation;
@@ -226,6 +218,20 @@ public class HexMapEditor : MonoBehaviour
         walledMode = (OptionalToggle)mode;
     }
 
+    public void SetApplySpecialIndex(bool toggle)
+    {
+        applySpecialIndex = toggle;
+    }
+
+    public void SetSpecialIndex(float index)
+    {
+        activeSpecialIndex = (int)index;
+    }
+    public void SetTerrainTypeIndex(int index)
+    {
+        activeTerrainTypeIndex = index;
+    }
+
     void ValidateDrag(HexCell currentCell)
     {
         for (
@@ -242,5 +248,6 @@ public class HexMapEditor : MonoBehaviour
         }
         isDrag = false;
     }
+
 
 }
